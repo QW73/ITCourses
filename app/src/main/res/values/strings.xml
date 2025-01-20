@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">ITCourses</string>
+    <string name="title_home">Главная</string>
+    <string name="title_favorites">Избранное</string>
+    <string name="title_account">Аккаунт</string>
+    <string name="title_course_information">О курсе</string>
+
+    <string name="title_favorites_header">Избранное</string>
+    <string name="title_account_header">Профиль</string>
+    <string name="account_your_courses_header">Ваши курсы</string>
+
+    <string name="filter_button_description">Открыть параметры фильтра</string>
+    <string name="search_supporting_text">Search courses...</string>
+    <string name="sort_date">По дате добавления</string>
+
+    <string name="account_actions_support_text">Написать в поддержку</string>
+    <string name="account_actions_settings_text">Настройки</string>
+    <string name="account_actions_log_out_text">Выйти из аккаунта</string>
+
+    <string name="add_to_favorites_button_description">Добавить курс в избранное</string>
+    <string name="course_info_star_default">3.9</string>
+    <string name="course_info_date_default">10 Сентября 2024</string>
+    <string name="course_info_title_default">3D-дженералист</string>
+
+    <string name="course_info_description_default">Освойте backend-разработку  и программирование на Java, фреймворки Spring и Maven, работу с базами данных и API. Создайте свой собственный проект, собрав портфолио и став востребованным специалистом для любой IT компании.</string>
+    <string name="course_info_price_default">999 ₽</string>
+    <string name="read_more">Подробнее</string>
+
+    <string name="course_info_progress_percent_default">50%</string>
+    <string name="course_info_progress_lessons_default">22</string>
+    <string name="course_info_progress_lessons_from">/44 уроков</string>
+
+    <string name="price_free">Бесплатно</string>
+
+    <string name="course_information_fragment_author">Автор</string>
+    <string name="course_information_fragment_author_default">Merion Academy</string>
+
+    <string name="button_start_course">Начать курс</string>
+    <string name="button_go_to_platform">Перейти на платформу</string>
+
+    <string name="course_information_fragment_text">У вас будет 7 видеоуроков в высоком качестве. На них спикер объясняет теорию и показывает как выполнять практические задания. Доступ к материалам сохраняется на 2 года.\n\nКроме теоретических материалов вас ждут тесты и практические задания. Они помогут лучше запомнить новую информацию и прокачать навыки, которые необходимы для реальной работы с RabbitMQ.</string>
+
+</resources>

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/content_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
+    android:background="?attr/colorSurface"
+    card_view:cardCornerRadius="16dp"
+    card_view:cardElevation="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/content_item_main_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="16dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/course_image_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            card_view:cardCornerRadius="12dp"
+            card_view:cardElevation="0dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/course_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="114dp"
+                    android:importantForAccessibility="no"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/default_course_image"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/course_info_star_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/rounded_course_info"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="6dp"
+                    android:paddingVertical="4dp"
+                    app:layout_constraintBottom_toBottomOf="@id/course_image"
+                    app:layout_constraintStart_toStartOf="@id/course_image">
+
+                    <ImageView
+                        android:id="@+id/course_info_star_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="4dp"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/ic_star_fill" />
+
+                    <TextView
+                        android:id="@+id/course_info_star"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_regular"
+                        android:letterSpacing="0.04"
+                        android:lineSpacingExtra="2sp"
+                        android:paddingBottom="0.1dp"
+                        android:text="@string/course_info_star_default"
+                        android:textColor="?attr/colorOnPrimary"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/course_info_date_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/rounded_course_info"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="6dp"
+                    android:paddingVertical="4dp"
+                    app:layout_constraintBottom_toBottomOf="@id/course_image"
+                    app:layout_constraintStart_toEndOf="@+id/course_info_star_container">
+
+                    <TextView
+                        android:id="@+id/course_info_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_regular"
+                        android:letterSpacing="0.04"
+                        android:lineSpacingExtra="2sp"
+                        android:paddingBottom="0.1dp"
+                        android:text="@string/course_info_date_default"
+                        android:textColor="?attr/colorOnPrimary"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <ImageButton
+                    android:id="@+id/button_add_to_favorites"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/rounded_course_add_to_favorites"
+                    android:contentDescription="@string/add_to_favorites_button_description"
+                    android:importantForAccessibility="yes"
+                    android:padding="6dp"
+                    android:src="@drawable/ic_bookmark"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Эти элементы теперь внутри content_item_main_container -->
+        <TextView
+            android:id="@+id/course_info_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/roboto_medium"
+            android:letterSpacing="0.015"
+            android:lineSpacingExtra="2sp"
+            android:paddingBottom="12dp"
+            android:text="@string/course_info_title_default"
+            android:textColor="?attr/colorOnPrimary"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/course_image_container" />
+
+        <TextView
+            android:id="@+id/course_info_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:alpha="0.7"
+            android:ellipsize="end"
+            android:fontFamily="@font/roboto_regular"
+            android:letterSpacing="0.04"
+            android:lineSpacingExtra="2sp"
+            android:maxLines="2"
+            android:paddingBottom="10dp"
+            android:text="@string/course_info_description_default"
+            android:textColor="?attr/colorOnPrimary"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/course_info_title" />
+
+        <TextView
+            android:id="@+id/course_info_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/roboto_medium"
+            android:letterSpacing="0.015"
+            android:lineSpacingExtra="2sp"
+            android:maxLines="2"
+            android:text="@string/course_info_price_default"
+            android:textColor="?attr/colorOnPrimary"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/course_info_description" />
+
+        <LinearLayout
+            android:id="@+id/course_button_read_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@id/course_info_price"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:id="@+id/course_read_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_semibold"
+                android:letterSpacing="0.04"
+                android:lineSpacingExtra="3sp"
+                android:text="@string/read_more"
+                android:textColor="?attr/colorPrimary"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:id="@+id/course_read_more_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:importantForAccessibility="no"
+                android:paddingTop="2dp"
+                android:src="@drawable/ic_arrow_right_short_fill" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

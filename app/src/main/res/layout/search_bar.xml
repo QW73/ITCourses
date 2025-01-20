@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/search_bar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/search_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/rounded_search_container"
+        android:orientation="horizontal"
+        android:paddingVertical="4dp">
+
+        <ImageView
+            android:id="@+id/search_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="4dp"
+            android:importantForAccessibility="no"
+            android:padding="12dp"
+            android:src="@drawable/ic_search" />
+
+        <TextView
+            android:id="@+id/search_supporting_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|start"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto_regular"
+            android:letterSpacing="0.025"
+            android:lineSpacingExtra="4sp"
+            android:text="@string/search_supporting_text"
+            android:textColor="?attr/colorOnPrimary"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/button_filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/rounded_search_icon_container"
+        android:contentDescription="@string/filter_button_description"
+        android:importantForAccessibility="yes"
+        android:padding="16dp"
+        android:src="@drawable/ic_funnel" />
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

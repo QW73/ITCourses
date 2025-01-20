@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/account_actions"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rounded_account_actions_container"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/account_actions_button_support"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:drawablePadding="8dp"
+        android:focusable="true"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center_vertical"
+        android:letterSpacing="0.01"
+        android:lineSpacingExtra="6sp"
+        android:paddingVertical="10dp"
+        android:paddingStart="16dp"
+        android:textColor="?attr/colorOnPrimary"
+        android:paddingEnd="12dp"
+        android:text="@string/account_actions_support_text"
+        android:textSize="14sp"
+        app:drawableEndCompat="@drawable/ic_arrow_right" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="16dp"
+        android:background="?attr/colorOutline" />
+
+    <TextView
+        android:id="@+id/account_actions_button_settings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:drawablePadding="8dp"
+        android:focusable="true"
+        android:textColor="?attr/colorOnPrimary"
+
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center_vertical"
+        android:letterSpacing="0.01"
+        android:lineSpacingExtra="6sp"
+        android:paddingVertical="10dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="12dp"
+        android:text="@string/account_actions_settings_text"
+        android:textSize="14sp"
+        app:drawableEndCompat="@drawable/ic_arrow_right" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="16dp"
+        android:background="?attr/colorOutline" />
+
+
+    <TextView
+        android:id="@+id/account_actions_button_log_out"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:drawablePadding="8dp"
+        android:focusable="true"
+        android:textColor="?attr/colorOnPrimary"
+
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center_vertical"
+        android:letterSpacing="0.01"
+        android:lineSpacingExtra="6sp"
+        android:paddingVertical="10dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="12dp"
+        android:text="@string/account_actions_log_out_text"
+        android:textSize="14sp"
+        app:drawableEndCompat="@drawable/ic_arrow_right" />
+
+
+</LinearLayout>

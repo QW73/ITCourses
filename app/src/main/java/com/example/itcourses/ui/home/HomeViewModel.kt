@@ -33,6 +33,11 @@ class HomeViewModel(
     ) {
         viewModelScope.launch {
             try {
+                Log.d(
+                    "HomeViewModel",
+                    "Fetching courses: page=$page, price=$price, category=$type, difficulty=$difficulty"
+                )
+
                 var loadedPages = 0
                 var currentPage = page
 
@@ -40,12 +45,19 @@ class HomeViewModel(
                     val response =
                         courseRepository.getCoursesOnPage(currentPage, price, type, difficulty)
 
+                    Log.d(
+                        "HomeViewModel",
+                        "Received ${response.courses.size} courses, hasNext=${response.meta.hasNext}"
+                    )
+
                     _paginationInfo.postValue(response.meta)
 
                     if (response.courses.isNotEmpty()) {
                         val currentCourses = _courses.value.orEmpty()
                         val newCourses = (currentCourses + response.courses).distinctBy { it.id }
+
                         _courses.postValue(newCourses)
+
                         loadedPages++
                     }
 
@@ -60,6 +72,7 @@ class HomeViewModel(
             }
         }
     }
+
 
     fun toggleFavorite(course: CourseModel) {
         viewModelScope.launch {

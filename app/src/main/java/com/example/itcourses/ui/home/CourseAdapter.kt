@@ -42,7 +42,12 @@ class CoursesAdapter(
         fun bind(course: CourseModel) {
 
             binding.courseInfoTitle.text = course.title
-            binding.courseInfoPrice.text = course.price
+            if (course.price == "-") {
+                binding.courseInfoPrice.text = "Бесплатно"
+            } else {
+                binding.courseInfoPrice.text = course.price
+            }
+
             Glide.with(binding.courseImage.context).load(course.cover).into(binding.courseImage)
 
             updateFavoriteIcon(course.favorite)

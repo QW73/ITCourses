@@ -1,6 +1,7 @@
 package com.example.itcourses.ui.home
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.itcourses.R
 import com.example.itcourses.databinding.FragmentHomeBinding
+import com.example.itcourses.ui.filter.FilterBottomSheetFragment
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeFragment : Fragment() {
@@ -35,7 +37,7 @@ class HomeFragment : Fragment() {
         binding.coursesRecyclerView.layoutManager = LinearLayoutManager(context)
 
         binding.searchView.buttonFilter.setOnClickListener {
-            //showFilterDialog()
+            showFilterDialog()
         }
 
         coursesAdapter = CoursesAdapter(emptyList(), onItemClick = { course ->
@@ -107,4 +109,24 @@ class HomeFragment : Fragment() {
         }
     }
 
+    private fun showFilterDialog() {
+
+
+        val filterDialog = FilterBottomSheetFragment { category, difficulty, price ->
+            Log.d(
+                "Filter",
+                "Applying filters: category=$category, difficulty=$difficulty, price=$price"
+            )
+            currentPage = 1
+            isLoading = true
+            showLoading(true)
+            homeViewModel.fetchCourses(currentPage, 1, price, category, difficulty)
+        }
+        filterDialog.show(childFragmentManager, "FilterBottomSheetDialog")
+
+
+    }
+
+
 }
+

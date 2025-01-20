@@ -10,10 +10,10 @@ import org.koin.dsl.module
 
 
 val appModule = module {
-    viewModel {  HomeViewModel(get(), get()) }
+    viewModel { HomeViewModel(get(), get()) }
     viewModel { FavoritesViewModel(get()) }
     viewModel { AccountViewModel() }
-    viewModel { CourseInformationViewModel() }
+    viewModel { CourseInformationViewModel(get()) }
 
     single { CustomBottomNavManager(get()) }
 

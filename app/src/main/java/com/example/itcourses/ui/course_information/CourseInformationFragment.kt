@@ -11,8 +11,9 @@ import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.example.core.utils.DateUtils
 import com.example.core.utils.openExternalLink
-import com.example.itcourses.databinding.FragmentCourseInformationBinding
 import com.example.data.models.CourseModel
+import com.example.itcourses.R
+import com.example.itcourses.databinding.FragmentCourseInformationBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.util.Locale
 
@@ -44,7 +45,6 @@ class CourseInformationFragment : Fragment() {
             findNavController().navigateUp()
         }
 
-
         val course = arguments?.getParcelable<CourseModel>("course") ?: return
 
         binding.buttonGoToPlatform.setOnClickListener {
@@ -53,6 +53,18 @@ class CourseInformationFragment : Fragment() {
             openExternalLink(requireContext(), stepikUrl)
         }
 
+
+        courseInformationViewModel.checkIfFavorite(course.id)
+
+        courseInformationViewModel.isFavorite.observe(viewLifecycleOwner) { isFavorite ->
+            updateFavoriteButton(isFavorite)
+        }
+
+        binding.courseInformationFragmentButtonAddToFavorites.setOnClickListener {
+            courseInformationViewModel.toggleFavorite(course)
+        }
+
+        binding.courseInformationFragmentButtonAddToFavorites
         binding.courseInformationFragmentDate.text = course.date
 
         val formattedDate = DateUtils.formatDateRU(course.date)
@@ -76,6 +88,13 @@ class CourseInformationFragment : Fragment() {
             Glide.with(binding.courseInformationFragmentImage.context).load(coverUrl)
                 .into(binding.courseInformationFragmentImage)
         }
+    }
+
+    private fun updateFavoriteButton(isFavorite: Boolean) {
+        binding.courseInformationFragmentButtonAddToFavorites.setImageResource(
+            if (isFavorite) R.drawable.ic_bookmark_favorite_big
+            else R.drawable.ic_bookmark_big
+        )
     }
 
     override fun onDestroyView() {

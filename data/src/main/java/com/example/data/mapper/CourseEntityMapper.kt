@@ -17,3 +17,19 @@ fun CourseEntity.toCourseModel(): CourseModel {
         description = this.description,
         authors = this.authors?.split(",")?.map { it.trim().toIntOrNull() })
 }
+
+fun CourseModel.toCourseEntity(): CourseEntity {
+    return CourseEntity(
+        id = this.id,
+        title = this.title,
+        price = this.price,
+        type = this.type,
+        difficulty = this.difficulty,
+        cover = this.cover,
+        date = this.date,
+        learners = this.learners,
+        summary = this.summary,
+        description = this.description,
+        authors = this.authors?.joinToString(", ") // Преобразуем список авторов в строку
+    )
+}
